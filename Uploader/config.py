@@ -14,6 +14,8 @@ class Config(object):
     CHAT_BASE_TOKEN = os.environ.get("CHAT_BASE_TOKEN", "")
     # get a token from @BotFather
     BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
+    #Premium User Strıng Session for 4 Gb upload
+    STRING_SESSION = os.environ.get("STRING_SESSION", "")
     # The Telegram API things
     API_ID = int(os.environ.get("API_ID", 12345))
     API_HASH = os.environ.get("API_HASH")
@@ -26,8 +28,8 @@ class Config(object):
     UPDATE_CHANNEL = os.environ.get("UPDATE_CHANNEL", "")
     # Telegram maximum file upload size
     MAX_FILE_SIZE = 4194304000
-    TG_MAX_FILE_SIZE = 4194304000
-    FREE_USER_MAX_FILE_SIZE = 4194304000
+    TG_MAX_FILE_SIZE = 2097152000
+    FREE_USER_MAX_FILE_SIZE = 2097152000
 
     # chunk size that should be used with requests
     CHUNK_SIZE = int(os.environ.get("CHUNK_SIZE", 128))
@@ -47,6 +49,8 @@ class Config(object):
     DATABASE_URL = os.environ.get("DATABASE_URL")
     SESSION_NAME = os.environ.get("SESSION_NAME", "Rename-Bot-0")
     LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", -100))
+    #Where 4 gb files go.. 
+    PRE_LOG = int(os.environ.get("LOG_CHANNEL", -100))
     LOGGER = logging
     OWNER_ID = int(os.environ.get("OWNER_ID", ""))
     # Update channel for Force Subscribe
