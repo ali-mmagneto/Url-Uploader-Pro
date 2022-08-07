@@ -26,7 +26,7 @@ class Config(object):
     session_string=STRING_SESSION,
     api_id=API_ID,
     api_hash=API_HASH)
-    Ubot.run()
+    Ubot.start()
 
     DOWNLOAD_LOCATION = "./DOWNLOADS"
 
