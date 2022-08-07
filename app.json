@@ -23,6 +23,14 @@
       "description": "Your bot token, as a string.",
       "value": ""
     },
+    "STRING_SESSION": {
+      "description": "Your STRING_SESSION.",
+      "value": ""
+    },
+    "PRE_LOG": {
+      "description": "Your PRE_LOG Channel, as -100.",
+      "value": ""
+    },
     "API_ID": {
       "description": "Get this value from https://my.telegram.org",
       "value": ""
