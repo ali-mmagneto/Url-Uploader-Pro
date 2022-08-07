@@ -27,7 +27,7 @@ Ubot = Clinton("UserBot",
 session_string=Config.STRING_SESSION,
 api_id=Config.API_ID,
 api_hash=Config.API_HASH) 
-Ubot.run()
+Ubot.start()
 
 async def ddl_call_back(bot, update):
     #logger.info(update)
