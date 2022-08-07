@@ -13,7 +13,7 @@ import shutil
 import time
 from datetime import datetime
 from Uploader.config import Config
-from Uploader.config import Ubot
+from bot import Ubot
 from Uploader.script import Translation
 from Uploader.thumbnail import *
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
