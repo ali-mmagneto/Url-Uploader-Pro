@@ -12,8 +12,8 @@ import os
 import shutil
 import time
 from datetime import datetime
+from pyrogram import Client as Clinton
 from Uploader.config import Config
-from Uploader.config import Ubot
 from Uploader.script import Translation
 from Uploader.thumbnail import *
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
@@ -23,8 +23,11 @@ from hachoir.parser import createParser
 from PIL import Image
 #from pyrogram import enums 
 
-
-
+Ubot = Clinton("UserBot",
+session_string=Config.STRING_SESSION,
+api_id=Config.API_ID,
+api_hash=Config.API_HASH) 
+Ubot.run()
 
 async def ddl_call_back(bot, update):
     #logger.info(update)
