@@ -1,7 +1,7 @@
 import os
 
 import logging
-from pyrogram import Client as Clinton 
+
 
 logging.basicConfig(
     format='%(name)s - %(levelname)s - %(message)s',
@@ -22,11 +22,6 @@ class Config(object):
     # Array to store users who are authorized to use the bot
     #Premium User Strıng Session for 4 Gb upload
     STRING_SESSION = os.environ.get("STRING_SESSION", "")
-    Ubot = Clinton("UserBot",
-    session_string=STRING_SESSION,
-    api_id=API_ID,
-    api_hash=API_HASH)
-    Ubot.start()
 
     DOWNLOAD_LOCATION = "./DOWNLOADS"
 
