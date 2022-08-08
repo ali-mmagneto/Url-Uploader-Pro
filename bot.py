@@ -1,6 +1,7 @@
 
 import logging
 import logging.config
+from pyrogram import enums
 
 # Get logging configurations
 logging.getLogger().setLevel(logging.ERROR)
