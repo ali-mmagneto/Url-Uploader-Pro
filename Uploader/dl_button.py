@@ -132,14 +132,14 @@ async def ddl_call_back(bot, update):
                     )
                 )
 
-                if Config.BOT_PM:
-                    try:
-                        await bot.copy_message(
-                            chat_id=chat_id, 
-                            from_chat_id=Config.PRE_LOG, 
-                            message_id=copy.id)
-                    except Exception as f:
-                        logger.info(f)
+            if Config.BOT_PM:
+                try:
+                    await bot.copy_message(
+                        chat_id=chat_id, 
+                        from_chat_id=Config.PRE_LOG, 
+                        message_id=copy.id)
+                except Exception as f:
+                    logger.info(f)
 
             elif tg_send_type == "video":
                  width, height, duration = await Mdata01(download_directory)
