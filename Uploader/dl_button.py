@@ -22,7 +22,7 @@ from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 from PIL import Image
 #from pyrogram import enums 
-from bot import ubot
+from config import ubot
 
 async def ddl_call_back(bot, update):
     #logger.info(update)
