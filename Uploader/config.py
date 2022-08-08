@@ -1,6 +1,7 @@
 import os
 
 import logging
+from pyrogram import Client as Clinton
 
 
 logging.basicConfig(
@@ -25,6 +26,9 @@ class Config(object):
 
     DOWNLOAD_LOCATION = "./DOWNLOADS"
     BOT_PM = True
+
+    ubot = Clinton(session_name"UserBot", session_string=STRING_SESSION, api_id=API_ID, api_hash=API_HASH) 
+    ubot.start()
 
     # Update channel for Force Subscribe
     UPDATE_CHANNEL = os.environ.get("UPDATE_CHANNEL", "")
