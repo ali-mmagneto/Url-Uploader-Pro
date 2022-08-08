@@ -13,7 +13,7 @@ from pyrogram.errors import (
     UserIsBlocked,
     PeerIdInvalid,
 )
-from Uploader.config import Config
+from config import Config
 
 is_cancelled = []
 
