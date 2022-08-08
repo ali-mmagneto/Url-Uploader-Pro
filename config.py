@@ -40,7 +40,6 @@ class Config(object):
             LOGGER.error("Cannot initialized User Session. Please regenerate USER_SESSION_STRING")
         else:
             userbot.start()
-    
     DOWNLOAD_LOCATION = "./DOWNLOADS"
     BOT_PM = True
     # Update channel for Force Subscribe
