@@ -45,11 +45,6 @@ async def youtube_dl_call_back(bot, update):
     print(cb_data)
     random1 = random_char(5)
 
-    tmp_directory_for_each_user = os.path.join(
-        Config.DOWNLOAD_LOCATION,
-        str(user_id),
-        dtime
-    )
     save_ytdl_json_path = Config.DOWNLOAD_LOCATION + \
         "/" + str(update.from_user.id) + f'{ranom}' + ".json"
     try:
@@ -198,6 +193,14 @@ async def youtube_dl_call_back(bot, update):
         # logger.info(t_response)
         os.remove(save_ytdl_json_path)
         end_one = datetime.now()
+        if os.path.isdir(tmp_directory_for_each_user):
+            directory_contents = os.listdir(tmp_directory_for_each_user)
+            directory_contents.sort()
+        else:
+            try:
+                shutil.rmtree(tmp_directory_for_each_user)  # delete folder for user
+            except:
+                pass
         time_taken_for_download = (end_one -start).seconds
         file_size = Config.TG_MAX_FILE_SIZE + 1
         for single_file in directory_contents:
