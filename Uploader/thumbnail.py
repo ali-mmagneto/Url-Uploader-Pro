@@ -29,7 +29,7 @@ from pyrogram.errors import MessageNotModified
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, CallbackQuery, ForceReply
 from Uploader.functions.forcesub import handle_force_subscribe
 
-from Uploader.config import Config
+from config import Config
 
 from Uploader.script import TEXT
 
