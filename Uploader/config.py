@@ -24,6 +24,9 @@ class Config(object):
     # Array to store users who are authorized to use the bot
     #Premium User Strıng Session for 4 Gb upload
     STRING_SESSION = os.environ.get("STRING_SESSION", "")
+    if STRING_SESSION:
+        userbot = Client(name='userbot', api_id=API_ID, api_hash=API_HASH, session_string=STRING_SESSION, parse_mode=enums.ParseMode.HTML)
+        userbot.start()
 
     DOWNLOAD_LOCATION = "./DOWNLOADS"
     BOT_PM = True
