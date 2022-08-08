@@ -22,17 +22,9 @@ from Uploader.database.database import Database
 
 from pyrogram import Client
 
-try:
-    STRING_SESSION = getConfig('STRING_SESSION')
-    if len(STRING_SESSION) == 0:
-        raise KeyError
-    userbot = Client(name='userbot', api_id=Config.API_ID, api_hash=Config.API_HASH, session_string=Config.STRING_SESSION, parse_mode=enums.ParseMode.HTML, no_updates=True)
-    if not userbot:
-        LOGGER.error("Cannot initialized User Session. Please regenerate USER_SESSION_STRING")
-    else:
-        userbot.start() 
-except Exception as e:
-    LOGGER.error(e)
+
+userbot = Client(name='userbot', api_id=Config.API_ID, api_hash=Config.API_HASH, session_string=Config.STRING_SESSION, parse_mode=enums.ParseMode.HTML, no_updates=True)
+userbot.start() 
 
 if __name__ == "__main__" :
     # create download directory, if not exist
