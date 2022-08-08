@@ -31,6 +31,8 @@ try:
         LOGGER.error("Cannot initialized User Session. Please regenerate USER_SESSION_STRING")
     else:
         userbot.start() 
+except Exception as e:
+    LOGGER.error(e)
 
 if __name__ == "__main__" :
     # create download directory, if not exist
