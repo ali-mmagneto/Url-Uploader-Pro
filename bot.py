@@ -9,7 +9,7 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 import os
 import pytz
 import datetime
-from Uploader.config import Config
+from config import Config
 
 from Uploader.database.database import Database
 
