@@ -24,6 +24,7 @@ class Config(object):
     STRING_SESSION = os.environ.get("STRING_SESSION", "")
 
     DOWNLOAD_LOCATION = "./DOWNLOADS"
+    BOT_PM = True
 
     # Update channel for Force Subscribe
     UPDATE_CHANNEL = os.environ.get("UPDATE_CHANNEL", "")
