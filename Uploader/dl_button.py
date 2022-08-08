@@ -116,7 +116,7 @@ async def ddl_call_back(bot, update):
         if file_size > Config.TG_MAX_FILE_SIZE:
             if tg_send_type == "upload_as_file":
                 thumbnail = await Gthumb01(bot, update)
-                await ubot.send_document(
+                copy = await ubot.send_document(
                     chat_id=Config.PRE_LOG,
                     document=download_directory,
                     thumb=thumbnail,
@@ -132,10 +132,20 @@ async def ddl_call_back(bot, update):
                     )
                 )
 
+                logger.info(str(copy)) 
+                if Config.BOT_PM:
+                    try:
+                        await bot.copy_message(
+                            chat_id=chat_id, 
+                            from_chat_id=Config.PRE_LOG, 
+                            message_id=copy.id)
+                    except Exception as f:
+                        logger.info(f)
+
             elif tg_send_type == "video":
                  width, height, duration = await Mdata01(download_directory)
                  thumbnail = await Gthumb02(bot, update, duration, download_directory)
-                 await ubot.send_video(
+                 copy = await ubot.send_video(
                     chat_id=Config.PRE_LOG,
                     video=download_directory,
                     caption=description,
@@ -154,10 +164,20 @@ async def ddl_call_back(bot, update):
                         start_time
                     )
                 )
+                logger.info(str(copy)) 
+                if Config.BOT_PM:
+                    try:
+                        await bot.copy_message(
+                            chat_id=chat_id, 
+                            from_chat_id=Config.PRE_LOG, 
+                            message_id=copy.id)
+                    except Exception as f:
+                        logger.info(f)
+
             if tg_send_type == "audio":
                 duration = await Mdata03(download_directory)
                 thumbnail = await Gthumb01(bot, update)
-                await ubot.send_audio(
+                copy = await ubot.send_audio(
                     chat_id=Config.PRE_LOG,
                     audio=download_directory,
                     caption=description,
@@ -173,10 +193,20 @@ async def ddl_call_back(bot, update):
                         start_time
                     )
                 ) 
+                logger.info(str(copy)) 
+                if Config.BOT_PM:
+                    try:
+                        await bot.copy_message(
+                            chat_id=chat_id, 
+                            from_chat_id=Config.PRE_LOG, 
+                            message_id=copy.id)
+                    except Exception as f:
+                        logger.info(f)
+
             elif tg_send_type == "vm":
                 width, duration = await Mdata02(download_directory)
                 thumbnail = await Gthumb02(bot, update, duration, download_directory)
-                await ubot.send_video_note(
+                copy = await ubot.send_video_note(
                     chat_id=Config.PRE_LOG,
                     video_note=download_directory,
                     duration=duration,
@@ -190,7 +220,16 @@ async def ddl_call_back(bot, update):
                         #custom_file_name,
                         start_time
                     )
-                )    
+                )
+                logger.info(str(copy)) 
+                if Config.BOT_PM:
+                    try:
+                        await bot.copy_message(
+                            chat_id=chat_id, 
+                            from_chat_id=Config.PRE_LOG, 
+                            message_id=copy.id)
+                    except Exception as f:
+                        logger.info(f)    
         else:
             # ref: message from @SOURCES_CODES
             start_time = time.time()
