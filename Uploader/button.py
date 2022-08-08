@@ -26,7 +26,13 @@ from Uploader.functions.display_progress import progress_for_pyrogram, humanbyte
 from PIL import Image
 from Uploader.functions.ran_text import random_char
 
+dtime = str(time.time())
 
+tmp_directory_for_each_user = os.path.join(
+        Config.DOWNLOAD_LOCATION,
+        str(user_id),
+        dtime
+    )
 
 async def youtube_dl_call_back(bot, update):
     cb_data = update.data
@@ -185,10 +191,11 @@ async def youtube_dl_call_back(bot, update):
         end_one = datetime.now()
         time_taken_for_download = (end_one -start).seconds
         file_size = Config.TG_MAX_FILE_SIZE + 1
-        try:
-            file_size = os.stat(download_directory).st_size
-        except FileNotFoundError as exc:
-            download_directory = os.path.splitext(download_directory)[0] + "." + "mkv"
+        for single_file in directory_contents:
+            print(single_file)
+            path = os.path.join(tmp_directory_for_each_user, single_file)
+
+            file_size = os.stat(path).st_size
             # https://stackoverflow.com/a/678242/4723940
             file_size = os.stat(download_directory).st_size
         if file_size > Config.TG_MAX_FILE_SIZE:
