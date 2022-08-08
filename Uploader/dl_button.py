@@ -132,7 +132,6 @@ async def ddl_call_back(bot, update):
                     )
                 )
 
-                logger.info(str(copy)) 
                 if Config.BOT_PM:
                     try:
                         await bot.copy_message(
@@ -165,7 +164,6 @@ async def ddl_call_back(bot, update):
                     )
                 )
 
-                logger.info(str(copy)) 
                 if Config.BOT_PM:
                     try:
                         await bot.copy_message(
@@ -194,8 +192,7 @@ async def ddl_call_back(bot, update):
                         start_time
                     )
                 ) 
-
-                logger.info(str(copy)) 
+ 
                 if Config.BOT_PM:
                     try:
                         await bot.copy_message(
@@ -223,8 +220,7 @@ async def ddl_call_back(bot, update):
                         start_time
                     )
                 )
-
-                logger.info(str(copy)) 
+ 
                 if Config.BOT_PM:
                     try:
                         await bot.copy_message(
