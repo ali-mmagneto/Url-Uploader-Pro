@@ -22,7 +22,7 @@ from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 from PIL import Image
 #from pyrogram import enums 
-from Uploader.config import ubot
+from Uploader.config import userbot
 
 async def ddl_call_back(bot, update):
     #logger.info(update)
@@ -116,7 +116,7 @@ async def ddl_call_back(bot, update):
         if file_size > Config.TG_MAX_FILE_SIZE:
             if tg_send_type == "upload_as_file":
                 thumbnail = await Gthumb01(bot, update)
-                copy = await ubot.send_document(
+                copy = await userbot.send_document(
                     chat_id=Config.PRE_LOG,
                     document=download_directory,
                     thumb=thumbnail,
@@ -144,7 +144,7 @@ async def ddl_call_back(bot, update):
             elif tg_send_type == "video":
                  width, height, duration = await Mdata01(download_directory)
                  thumbnail = await Gthumb02(bot, update, duration, download_directory)
-                 copy = await ubot.send_video(
+                 copy = await userbot.send_video(
                     chat_id=Config.PRE_LOG,
                     video=download_directory,
                     caption=description,
@@ -176,7 +176,7 @@ async def ddl_call_back(bot, update):
             if tg_send_type == "audio":
                 duration = await Mdata03(download_directory)
                 thumbnail = await Gthumb01(bot, update)
-                copy = await ubot.send_audio(
+                copy = await userbot.send_audio(
                     chat_id=Config.PRE_LOG,
                     audio=download_directory,
                     caption=description,
@@ -205,7 +205,7 @@ async def ddl_call_back(bot, update):
             elif tg_send_type == "vm":
                 width, duration = await Mdata02(download_directory)
                 thumbnail = await Gthumb02(bot, update, duration, download_directory)
-                copy = await ubot.send_video_note(
+                copy = await userbot.send_video_note(
                     chat_id=Config.PRE_LOG,
                     video_note=download_directory,
                     duration=duration,
