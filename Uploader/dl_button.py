@@ -13,7 +13,8 @@ import shutil
 import time
 from datetime import datetime
 from pyrogram import Client as Clinton
-from config import Config, userbot
+from config import Config
+from bot import userbot
 from Uploader.script import Translation
 from Uploader.thumbnail import *
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
