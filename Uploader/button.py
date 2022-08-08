@@ -36,6 +36,16 @@ tmp_directory_for_each_user = os.path.join(
 
 async def youtube_dl_call_back(bot, update):
     cb_data = update.data
+    cb_data = update.data
+    tg_send_type, yt_dlp_format, yt_dlp_ext, random = cb_data.split("|")
+
+    dtime = str(time.time())
+    
+    message = update.message
+    current_user_id = message.reply_to_message.from_user.id
+    user_id = update.from_user.id
+    chat_id = message.chat.id
+    message_id = message.id
     # youtube_dl extractors
     tg_send_type, youtube_dl_format, youtube_dl_ext, ranom = cb_data.split("|")
     print(cb_data)
