@@ -1,5 +1,8 @@
 import datetime
 import motor.motor_asyncio
+import datetime
+import motor.motor_asyncio
+from config import DATABASE_URL, SESSION_NAME
 
 
 class Database:
@@ -109,3 +112,5 @@ class Database:
 
     async def delete_user(self, user_id):
         await self.col.delete_many({'id': int(user_id)})
+
+db = Database(DATABASE_URL, SESSION_NAME)
