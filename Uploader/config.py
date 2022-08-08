@@ -30,10 +30,6 @@ class Config(object):
 
     DOWNLOAD_LOCATION = "./DOWNLOADS"
     BOT_PM = True
-
-    userbot = Client(name='userbot', api_id=API_ID, api_hash=API_HASH, session_string=STRING_SESSION, parse_mode=enums.ParseMode.HTML)
-    userbot.start()
-
     # Update channel for Force Subscribe
     UPDATE_CHANNEL = os.environ.get("UPDATE_CHANNEL", "")
     # Telegram maximum file upload size
