@@ -1,9 +1,16 @@
 import os
+from logging import getLogger, FileHandler, StreamHandler, INFO, basicConfig, error as log_error, info as log_info, warning as log_warning
 
 import logging
 from pyrogram import Client 
 from pyrogram import enums
 
+
+basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+                    handlers=[FileHandler('log.txt'), StreamHandler()],
+                    level=INFO)
+
+LOGGER = getLogger(__name__)
 
 logging.basicConfig(
     format='%(name)s - %(levelname)s - %(message)s',
@@ -24,10 +31,16 @@ class Config(object):
     # Array to store users who are authorized to use the bot
     #Premium User Strıng Session for 4 Gb upload
     STRING_SESSION = os.environ.get("STRING_SESSION", "")
-    if STRING_SESSION:
-        userbot = Client(name='userbot', api_id=API_ID, api_hash=API_HASH, session_string=STRING_SESSION, parse_mode=enums.ParseMode.HTML)
-        userbot.start()
-
+    try:
+        STRING_SESSION = getConfig('STRING_SESSION')
+        if len(STRING_SESSION) == 0:
+            raise KeyError
+        userbot = Client(name='userbot', api_id=API_ID, api_hash=API_HASH, session_string=STRING_SESSION, parse_mode=enums.ParseMode.HTML, no_updates=True)
+        if not userbot:
+            LOGGER.error("Cannot initialized User Session. Please regenerate USER_SESSION_STRING")
+        else:
+            userbot.start()
+    
     DOWNLOAD_LOCATION = "./DOWNLOADS"
     BOT_PM = True
     # Update channel for Force Subscribe
