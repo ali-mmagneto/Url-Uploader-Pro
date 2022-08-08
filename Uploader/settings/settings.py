@@ -1,7 +1,7 @@
 import logging
 logger = logging.getLogger(__name__)
 
-from Uploader.config import Config
+from config import Config
 from Uploader.script import TEXT
 from Uploader.thumbnail import show_thumbnail
 from pyrogram import Client, filters
