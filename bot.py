@@ -30,11 +30,6 @@ if __name__ == "__main__" :
     Warrior.broadcast_ids = {}
     Warrior.run()
 
-    ubot = Clinton("UserBot",
-    session_string=Config.STRING_SESSION,
-    api_id=Config.API_ID,
-    api_hash=Config.API_HASH) 
 
-    ubot.start()
 
 
