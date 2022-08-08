@@ -164,6 +164,7 @@ async def ddl_call_back(bot, update):
                         start_time
                     )
                 )
+
                 logger.info(str(copy)) 
                 if Config.BOT_PM:
                     try:
@@ -193,6 +194,7 @@ async def ddl_call_back(bot, update):
                         start_time
                     )
                 ) 
+
                 logger.info(str(copy)) 
                 if Config.BOT_PM:
                     try:
@@ -221,6 +223,7 @@ async def ddl_call_back(bot, update):
                         start_time
                     )
                 )
+
                 logger.info(str(copy)) 
                 if Config.BOT_PM:
                     try:
