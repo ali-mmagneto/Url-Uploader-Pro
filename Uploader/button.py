@@ -16,7 +16,7 @@ import shutil
 import time
 from datetime import datetime
 #from pyrogram import enums 
-from Uploader.config import Config
+from config import Config
 from Uploader.script import Translation
 from Uploader.thumbnail import *
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
