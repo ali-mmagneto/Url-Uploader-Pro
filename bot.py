@@ -46,7 +46,3 @@ if __name__ == "__main__" :
             LOGGER.error("Cannot initialized User Session. Please regenerate USER_SESSION_STRING")
         else:
             userbot.start()
-
-
-
-
