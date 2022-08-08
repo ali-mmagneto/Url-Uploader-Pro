@@ -26,13 +26,7 @@ from Uploader.functions.display_progress import progress_for_pyrogram, humanbyte
 from PIL import Image
 from Uploader.functions.ran_text import random_char
 
-dtime = str(time.time())
 
-tmp_directory_for_each_user = os.path.join(
-        Config.DOWNLOAD_LOCATION,
-        str(user_id),
-        dtime
-    )
 
 async def youtube_dl_call_back(bot, update):
     cb_data = update.data
@@ -50,7 +44,12 @@ async def youtube_dl_call_back(bot, update):
     tg_send_type, youtube_dl_format, youtube_dl_ext, ranom = cb_data.split("|")
     print(cb_data)
     random1 = random_char(5)
-    
+
+    tmp_directory_for_each_user = os.path.join(
+        Config.DOWNLOAD_LOCATION,
+        str(user_id),
+        dtime
+    )
     save_ytdl_json_path = Config.DOWNLOAD_LOCATION + \
         "/" + str(update.from_user.id) + f'{ranom}' + ".json"
     try:
