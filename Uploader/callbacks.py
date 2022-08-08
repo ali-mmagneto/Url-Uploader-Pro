@@ -1,6 +1,6 @@
 import os
 from Uploader.functions.display_progress import progress_for_pyrogram, humanbytes
-from Uploader.config import Config
+from config import Config
 from Uploader.dl_button import ddl_call_back
 from Uploader.button import youtube_dl_call_back
 from Uploader.commands import help, start, about
