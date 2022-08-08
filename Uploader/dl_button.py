@@ -13,7 +13,7 @@ import shutil
 import time
 from datetime import datetime
 from pyrogram import Client as Clinton
-from Uploader.config import Config
+from config import Config, userbot
 from Uploader.script import Translation
 from Uploader.thumbnail import *
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
@@ -22,7 +22,6 @@ from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 from PIL import Image
 #from pyrogram import enums 
-from Uploader.config import userbot
 
 async def ddl_call_back(bot, update):
     #logger.info(update)
